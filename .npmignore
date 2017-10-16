@@ -1,0 +1,10 @@
+node_modules/*
+src/*
+*.swp
+.DS_STORE
+/dist/*
+**/.vscode
+*.log
+npm-debug.log.*
+*.ngfactory.ts
+*.ngsummary.json
