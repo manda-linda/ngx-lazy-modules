@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "baseUrl": "",
+        "declaration": true,
+        "stripInternal": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "isolatedModules": false,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "noEmitHelpers": false,
+        "noEmitOnError": false,
+        "outDir": "./dist",
+        "rootDir": ".",
+        "sourceMap": true,
+        "inlineSources": true,
+        "lib": ["es2015", "dom"],
+        "target": "es5",
+        "skipLibCheck": true
+    },
+    "angularCompilerOptions": {
+        "strictMetadataEmit": true,
+        "genDir": "./dist"
+    }
+
+}
