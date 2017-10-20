@@ -3,9 +3,9 @@ const path = require('path');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const aliases = {
-  'index': path.join(__dirname, '../index.ts')
+  //'index': path.join(__dirname, '../index.ts'),
+  'index': path.join(__dirname,'../dist/bundles/ngxLazyModules.umd.min.js')
 };
-console.log(aliases);
 // Webpack Config
 var webpackConfig = {
   entry: {
