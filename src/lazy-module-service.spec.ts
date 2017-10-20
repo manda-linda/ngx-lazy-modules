@@ -14,6 +14,7 @@ describe('<Unit Test> Lazy Module Service', () => {
         moduleFactoryMock = mock(NgModuleFactory);
 
         service = new LazyModuleService(
+            {},
             instance(injectorMock),
             instance(compilerMock)
         );

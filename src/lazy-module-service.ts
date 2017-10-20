@@ -1,6 +1,5 @@
-import { Injectable, NgModuleFactory, Compiler, Injector, NgModuleRef, ComponentFactory } from '@angular/core';
+import { Injectable, NgModuleFactory, Compiler, Inject, Injector, NgModuleRef, ComponentFactory } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-
 /**
  * This service utilizes https://github.com/shlomiassaf/ng-router-loader to build lazy modules and to replace
  * the loadChildren string with a function that returns the module. This is the same pattern used in the lazy-router.
@@ -18,18 +17,19 @@ export class LazyModuleService {
     // Observable of lazy loaded modules
     public loadObservable: Subject<any>;
     public loading: any = {};
-    private lazyModules: ModuleDict = {
-        ModalModule: {
-            loadChildren: 'app/modules/modals/modals.module#ModalModule?chunkName=modals'
-        }
-    };
+    private lazyModules: ModuleDict;
     private loadedModules: any = {};
 
     // For the AOT build this will not actually inject the compiler
     constructor(
+        @Inject('LazyConfig') private config,
         private injector: Injector,
         private compiler: Compiler) {
         this.loadObservable = new Subject();
+        if (!this.config) {
+            console.warn('Missing Lazy Module \"modules\" configuration.');
+        }
+        this.lazyModules = this.config || {};
     }
 
     public loadModule(name: string): Promise<NgModuleRef<any>> {

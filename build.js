@@ -27,7 +27,7 @@ echo(chalk.green('TSLint completed'));
 
 /* Aot compilation */
 echo('Start AoT compilation');
-if (exec(`node_modules/.bin/ngc -p tsconfig.json`).code !== 0) {
+if (exec(`node_modules/.bin/ngc -p tsconfig.aot.json`).code !== 0) {
     echo(chalk.red(`Error: AoT compilation failed`));
     exit(1);
 }

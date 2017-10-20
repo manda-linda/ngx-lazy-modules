@@ -6,7 +6,8 @@ import {
   Inject,
   Optional,
   OpaqueToken,
-  SkipSelf
+  SkipSelf,
+  InjectionToken
 } from '@angular/core';
 
 import { LazyModuleService } from './src/lazy-module-service';
@@ -15,6 +16,15 @@ import { LazyModuleOutletDirective } from './src/lazy-module-outlet.directive';
 export * from './src/lazy-module-service';
 export * from './src/lazy-module-outlet.directive';
 
+/**
+ * 
+ * {
+ *    [key: string]: {
+ *        loadChildren: string | function
+ *    }
+ * }
+ * 
+ */
 
 export const NG2LAZYMODULE_FORROOT_GUARD = new OpaqueToken('LAZY MODULE FORROOT GUARD');
 export function provideForRootGuard(lazyModuleService: LazyModuleService): any {
@@ -38,10 +48,14 @@ export function provideForRootGuard(lazyModuleService: LazyModuleService): any {
 export class NgxLazyModule {
   constructor(@Optional() @Inject(NG2LAZYMODULE_FORROOT_GUARD) guard: any) {}
 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(configuration: any): ModuleWithProviders {
     return {
       ngModule: NgxLazyModule,
       providers: [
+        {
+          provide: 'LazyConfig',
+          useValue: configuration
+        },
         {
           provide: NG2LAZYMODULE_FORROOT_GUARD,
           useFactory: provideForRootGuard,

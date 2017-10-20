@@ -8,7 +8,7 @@ import { Attribute, ChangeDetectorRef, ComponentRef, Directive, OnDestroy, OnIni
  * 'name' attribute should reference the module type/key that is configured in the lazy-module-service. This directive listens to
  *  the service and attaches the module once it is loaded.
  * ```
- * <div ngxLazyModuleOutlet name="ModalModule"></div>
+ * <div ngxLazyModuleOutlet name="ModalModule" componentName=""></div>
  * ```
  */
 @Directive({selector: '[ngxLazyModuleOutlet]'})
