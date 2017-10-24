@@ -1,9 +1,9 @@
 export default {
     entry: './dist/index.js',
-    dest: './dist/bundles/ngxLazyModules.umd.js',
+    dest: './dist/bundles/ngxLazyModule.umd.js',
     format: 'umd',
     // Global namespace.
-    moduleName: 'NgxLazyModules',
+    moduleName: 'NgxLazyModule',
     // External libraries.
     external: [
         '@angular/core',

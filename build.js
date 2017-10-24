@@ -45,7 +45,7 @@ echo(chalk.green('Bundling completed'));
 /* Minimizes umd bundle */
 echo('Start minification');
 
-exec('node_modules/.bin/uglifyjs ./dist/bundles/ngxLazyModules.umd.js -o ./dist/bundles/ngxLazyModules.umd.min.js');
+exec('node_modules/.bin/uglifyjs ./dist/bundles/ngxLazyModule.umd.js -o ./dist/bundles/ngxLazyModule.umd.min.js');
 
 echo(chalk.green('Minification completed'));
 
