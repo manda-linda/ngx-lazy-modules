@@ -1,8 +1,9 @@
 {
   "name": "ngx-lazy-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Module for creating lazy module hooks in Angular",
-  "main": "./dist/bundles/ngxLazyModule.umd.min.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
@@ -31,7 +32,8 @@
     "LICENSE",
     "package.json",
     "README.md",
-    "dist"
+    "dist",
+    "tsconfig.json"
   ],
   "peerDependencies": {
     "@angular/core": "~4.4.3"
