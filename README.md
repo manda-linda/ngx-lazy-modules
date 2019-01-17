@@ -1,27 +1,28 @@
-# Ngx Lazy Modules
+# NgxLazyModules
 
-This module contains tools for lazy loading modules outside of the routing context. This module is designed to work within a project that utilizes Webpack and the ng-router-loader **[ng-router-loader](https://github.com/shlomiassaf/ng-router-loader)**
+This module contains tools for lazy loading modules outside of the routing context.
 
 ## Getting Started
 
 Install and save as a dev dependency
 
-`npm install ngx-lazy-modules --save-dev`
+`npm install ngx-lazy-module --save-dev`
 
 ### Add NgxLazyModule to Application
 
-Add NgxLazyModule to the main application module. Use the `forRoot` function to configure the modules you plan to lazy load. The `loadChildren` string should be the path to the module file and will be resolved by the Webpack loader. The name after `#` should match the object key.
-
+Add NgxLazyModule to the main application module. Use the `forRoot` function to provide a singleton of the LazyModuleService in your Angular application. Configure the RouterModule.forRoot with the modules you want to programatically load using the '__lazy/' prefix on the route and a `canActivate` guard to block routing. This allows us to use the Angular compiler to build the module in the context of the application and the prefix allows the LazyModuleService to identify the module for later. 
 ```
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule, 
-    NgxLazyModule.forRoot({
-      ModalsModule: {
-          loadChildren: './modules/modals/modals.module.ts#ModalsModule'
+    RouterModule.forRoot([{
+          path: '__lazy/LazyModule',
+          loadChildren: './lazyModule/lazy.module#LazyModule',
+        canActivate: [ () => false]
         }
-  })],
+    ]),
+    NgxLazyModule.forRoot()],
   bootstrap: [AppComponent]
 })
 export class AppModule {
@@ -83,4 +84,14 @@ Use the function `loadModule` in the `LazyModuleService` to programmatically loa
 
 ## Local Development
 
-Clone repo. npm i. Then use `npm run start:demo` to run the demo project locally at http://localhost:3333 
+Clone repo. npm i. Then use `npm run start` to run the demo project locally at http://localhost:4200
+
+
+
+
+
+
+
+
+
+
