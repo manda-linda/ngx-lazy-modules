@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-lazy-module": [
+        "dist/ngx-lazy-module"
+      ],
+      "ngx-lazy-module/*": [
+        "dist/ngx-lazy-module/*"
+      ]
+    }
   }
 }

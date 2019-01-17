@@ -1,16 +1,52 @@
 {
-  "name": "ngx-lazy-lib",
-  "version": "0.0.0",
+  "name": "ngx-lazy-module",
+  "description": "Module for creating lazy module hooks in Angular",
+  "main": "dist/bundles/ngx-lazy-module.umd.js",
+  "module": "dist/fesm5/ngx-lazy-module.js",
+  "es2015": "dist/fesm2015/ngx-lazy-module.js",
+  "esm5": "dist/esm5/ngx-lazy-module.js",
+  "esm2015": "dist/esm2015/ngx-lazy-module.js",
+  "fesm5": "dist/fesm5/ngx-lazy-module.js",
+  "fesm2015": "dist/fesm2015/ngx-lazy-module.js",
+  "metadata": "dist/ngx-lazy-module.metadata.json",
+  "typings": "dist/ngx-lazy-module.d.ts",
+  "version": "2.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve ngx-lazy-module-tester",
+    "build": "ng build ngx-lazy-module",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manda-linda/ngx-lazy-module.git"
+  },
+  "keywords": [
+    "Angular",
+    "Lazy",
+    "Module",
+    "Javascript"
+  ],
+  "author": "Amanda daSilva <adasilva@grubhub.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manda-linda/ngx-lazy-module/issues"
+  },
+  "homepage": "https://github.com/manda-linda/ngx-lazy-module#readme",
+  "files": [
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "dist",
+    "tsconfig.json"
+  ],
   "dependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0",
+    "@angular/router": "^7.2.0"
+  },
+  "devDependencies": {
     "@angular/animations": "~7.2.0",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
@@ -20,17 +56,15 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
-    "rxjs": "~6.3.3",
-    "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
-  },
-  "devDependencies": {
+    "zone.js": "~0.8.26",
+    "@angular-devkit/build-angular": "~0.12.0",
+    "@angular-devkit/build-ng-packagr": "~0.12.0",
     "@angular/cli": "~7.2.1",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -39,8 +73,13 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^4.2.0",
     "protractor": "~5.4.0",
+    "rxjs": "^6.3.3",
+    "ts-mockito": "^2.3.1",
     "ts-node": "~7.0.0",
+    "tsickle": ">=0.34.0",
+    "tslib": "^1.9.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
   }
