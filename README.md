@@ -1,4 +1,4 @@
-# NgxLazyModules
+# NgxLazyModule
 
 This module contains tools for lazy loading modules outside of the routing context.
 

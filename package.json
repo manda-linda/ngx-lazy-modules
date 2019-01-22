@@ -31,9 +31,9 @@
   "author": "Amanda daSilva <adasilva@grubhub.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/manda-linda/ngx-lazy-module/issues"
+    "url": "https://github.com/manda-linda/ngx-lazy-modules/issues"
   },
-  "homepage": "https://github.com/manda-linda/ngx-lazy-module#readme",
+  "homepage": "https://github.com/manda-linda/ngx-lazy-modules#readme",
   "files": [
     "LICENSE",
     "package.json",
