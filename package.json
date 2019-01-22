@@ -10,7 +10,7 @@
   "fesm2015": "dist/fesm2015/ngx-lazy-module.js",
   "metadata": "dist/ngx-lazy-module.metadata.json",
   "typings": "dist/ngx-lazy-module.d.ts",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve ngx-lazy-module-tester",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manda-linda/ngx-lazy-module.git"
+    "url": "git+https://github.com/manda-linda/ngx-lazy-modules.git"
   },
   "keywords": [
     "Angular",
